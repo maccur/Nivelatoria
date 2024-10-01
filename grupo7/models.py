@@ -22,7 +22,7 @@ class Transaccion:
     def __init__(self, usuario, producto):
         self.usuario = usuario
         self.producto = producto
-        self.realizar_compra()
+        
 
     def realizar_compra(self):
         if self.usuario.balance >= self.producto.precio:
