@@ -19,14 +19,16 @@ class Producto:
         self.precio = precio
 
 class Transaccion:
+
+    hitorial = []
     def __init__(self, usuario, producto):
         self.usuario = usuario
         self.producto = producto
-        
 
     def realizar_compra(self):
         if self.usuario.balance >= self.producto.precio:
             self.usuario.balance -= self.producto.precio
+            Transaccion.historial.append(self)
             return True
         return False
     
