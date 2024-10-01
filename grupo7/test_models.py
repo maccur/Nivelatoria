@@ -22,7 +22,7 @@ class TestPonzi(unittest.TestCase):
         usuario = Usuario("Juan", "juan@test.com")
         referido = Usuario("Pedro", "pedro@test.com")
         usuario.agregar_referido(referido)
-        self.assertEqual(len(usuario.obtener_referidos()), 1)
+        self.assertEqual(len(usuario.agregar_referido()), 1)
 
     def test_historial_transacciones(self):
         usuario = Usuario("Juan", "juan@test.com")
