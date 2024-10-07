@@ -1,0 +1,15 @@
+@startuml
+actor Cliente
+participant "Frontend HTML" as Frontend
+participant "Flask App" as Backend
+database "SQLite Database" as DB
+
+Cliente -> Frontend : Rellena formulario de compra
+Frontend -> Backend : Enviar formulario (POST /comprar)
+Backend -> DB : Buscar Usuario y Producto
+DB -> Backend : Retorna Usuario y Producto
+Backend -> Backend : Verificar si el usuario tiene saldo suficiente
+Backend -> DB : Registrar Transacción
+Backend -> Frontend : Respuesta de compra
+Frontend -> Cliente : Muestra resultado de la compra
+@enduml

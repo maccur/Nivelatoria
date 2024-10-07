@@ -1,0 +1,28 @@
+@startuml
+class UsuarioModel {
+  + id: Integer
+  + nombre: String
+  + email: String
+  + balance: Float
+  + transacciones: List<TransaccionModel>
+}
+
+class ProductoModel {
+  + id: Integer
+  + nombre: String
+  + precio: Float
+  + transacciones: List<TransaccionModel>
+}
+
+class TransaccionModel {
+  + id: Integer
+  + usuario_id: Integer
+  + producto_id: Integer
+  + usuario: UsuarioModel
+  + producto: ProductoModel
+}
+
+UsuarioModel "1" --> "*" TransaccionModel : realiza
+ProductoModel "1" --> "*" TransaccionModel : contiene
+
+@enduml
